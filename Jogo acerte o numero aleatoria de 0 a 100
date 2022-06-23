@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Random;
+public class ChuteNumero {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Random random = new Random();
+			
+		
+	boolean acertou = false;
+	int tentativas = 10;
+	int numeroSecreto = random.nextInt( 1000 );
+	int chute;
+
+	while(tentativas > 0 && acertou == false) {
+		System.out.println("Qual seu chute ");
+		chute = input.nextInt();
+		
+		if(numeroSecreto == chute) {
+			System.out.println("voce acertou");
+			acertou = true;
+		}else if(chute > numeroSecreto) {
+			--tentativas;
+			System.out.println("Numero menor " + tentativas + " restantes");
+			
+		}else {
+			--tentativas;
+			System.out.println("Numero maior " + tentativas + " restantes");
+		}
+	}
+	System.out.println(numeroSecreto);
+
+	}
+
+}
